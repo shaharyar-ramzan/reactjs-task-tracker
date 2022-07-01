@@ -1,11 +1,16 @@
 import './App.css';
 import React , {useState} from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Tasks from './Components/Tasks';
 import AddTask from './Components/AddTask';
 import Footer from './Components/Footer';
 import About from './Components/About';
+import { 
+    BrowserRouter as Router, 
+    Routes, 
+    Route, 
+    HashRouter 
+  } from 'react-router-dom';
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -77,7 +82,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <HashRouter>
       <div className="container">
 
         <Header onAdd={() => setShowAddTask(!showAddTask)} showForm={showAddTask} />
@@ -108,7 +113,7 @@ function App() {
         
     </div>
 
-    </Router>
+    </HashRouter>
   );
 }
 
